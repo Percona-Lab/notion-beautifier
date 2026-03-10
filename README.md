@@ -4,68 +4,90 @@ An opinionated formatter for Notion pages. Like Prettier, but for Notion.
 
 ## What it does
 
-`notion-beautifier` is a Claude skill that transforms plain Notion pages into professionally structured documents with consistent visual hierarchy. It uses a design system built from real production pages — callout-based section headers, color-coded semantic meaning, columns, tables, and layered layouts.
+notion-beautifier is a skill for Claude that transforms plain Notion pages into professionally structured documents. It applies a consistent design system — colored section headers, structured layouts, tables, columns — so your pages look polished without manual formatting.
 
-Two commands:
+**Two commands:**
 
-- **"Create notion page"** — Builds a new page from scratch with the design system applied
-- **"Beautify"** — Takes an existing Notion page URL, preserves all content, and reformats it
+| Command | What it does |
+|---------|-------------|
+| **"Create notion page"** | Builds a new page from scratch with the design system applied |
+| **"Beautify"** + a Notion URL | Reformats an existing page — preserves all your content, just makes it look great |
 
-## Design System
+## Getting Started
 
-The skill applies a consistent set of patterns:
+### What you need
 
-- **Colored callout headers** — Red for major sections, green for next steps, blue for objectives
-- **Intro callout** — Every page opens with context (owner, purpose, date)
-- **Gray-wrapped tables** with yellow header rows
-- **Columns** for parallel content (pillars, comparisons, paired sections)
-- **Architecture layers** as stacked colored callouts
-- **Blue blockquotes** for key objectives and statements
-- **Colored text spans** for inline labels and status indicators
+1. **Claude** — either [Claude Code](https://docs.claude.com/en/docs/claude-code) (terminal) or [Cowork](https://claude.ai) (desktop app)
+2. **Notion connected** — Claude needs access to your Notion workspace via the Notion MCP connector
 
-## Installation
+### How to install
 
-### Claude Code / Cowork
+**Step 1:** Download the `SKILL.md` file from this repo. You can either:
+- Click on `SKILL.md` above, then click the download button (↓), or
+- Click the green **Code** button → **Download ZIP**, then unzip it
 
-Copy the `notion-beautifier` directory (containing `SKILL.md`) into your skills folder:
-
+**Step 2:** Create the skills folder if it doesn't exist. Open your terminal and run:
 ```bash
-# Claude Code
-cp -r notion-beautifier ~/.claude/skills/
-
-# Or add to your project's .claude/skills/ directory
+mkdir -p ~/.claude/skills/notion-beautifier
 ```
 
-### Requirements
+**Step 3:** Move the `SKILL.md` file into that folder:
+```bash
+mv ~/Downloads/SKILL.md ~/.claude/skills/notion-beautifier/
+```
 
-- Notion MCP connector must be connected
-- Works with Claude Code, Cowork, or any Claude environment with Notion MCP access
+That's it! The skill will be available in your next Claude session.
+
+> **Tip:** If you downloaded the ZIP, the file is inside a `notion-beautifier-main` folder. Adjust the path accordingly:
+> ```bash
+> mv ~/Downloads/notion-beautifier-main/SKILL.md ~/.claude/skills/notion-beautifier/
+> ```
+
+### Verify it's installed
+
+In Claude Code, run `/skills` — you should see `notion-beautifier` in the list. In Cowork, the skill will appear automatically when you start a new session.
 
 ## Usage
 
-```
-# Create a new page
-Create notion page: MySQL Product Vision for 2026
+Just tell Claude what you want:
 
-# Beautify an existing page
+```
+Create notion page: Your Notion Page
+```
+
+```
 Beautify https://www.notion.so/your-workspace/Your-Page-abc123
 ```
 
-## Examples
+## What it formats
 
-The skill handles multiple page types:
+The skill works with any type of Notion page:
 
 - **Vision / Strategy docs** — Two-column pillars, synthesis sections, summary callouts
-- **Proposals** — Red section headers, phased plans, comparison tables
-- **Goals / Metrics** — Priority headings, toggle details, checkboxes
-- **Architecture / Technical docs** — Code in gray callouts, layer diagrams, reference tables
-- **Workspace plans** — Principles lists, scope controls, security + next steps columns
+- **Proposals** — Colored section headers, phased plans, comparison tables
+- **Goals / Metrics** — Priority headings, collapsible details, checkboxes
+- **Architecture / Technical docs** — Code blocks in styled callouts, layer diagrams, reference tables
+- **Workspace plans** — Principles lists, scope controls, paired columns
+
+## Design System
+
+The skill applies a consistent color language:
+
+| Color | Meaning |
+|-------|---------|
+| Red | Major section headers, critical warnings |
+| Blue | Key objectives, commitments, highlighted statements |
+| Green | Next steps, success metrics, positive outcomes |
+| Yellow | Caution areas, table header rows, security/governance |
+| Purple | Innovation sections, advanced features |
+| Orange | Priority 1 items, phased labels |
+| Gray | Reference tables, notes, supplementary context |
 
 ## Known Limitations
 
-- Notion API doesn't support setting "full width" — toggle it manually after page creation
-- `<details>` toggle blocks cannot contain code blocks (Notion strips the code). The skill uses blue_bg headings + gray callouts instead.
-- Pages are created as private by default. Specify a parent page/database URL to place them elsewhere.
+- **Full width:** The Notion API doesn't support setting pages to full width — toggle it manually after creation.
+- **Toggle + code:** Notion's toggle blocks can't contain code blocks (the code gets stripped). The skill works around this with styled headings and callouts instead.
+- **Privacy:** Pages are created as private by default. Tell Claude where to put the page if you want it somewhere specific.
 
 ## License
 
