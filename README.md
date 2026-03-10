@@ -1,10 +1,14 @@
-# notion-beautifier
+# BINER
+
+**Beautiful Intelligent Notion Enhancement & Reformatting**
 
 An opinionated formatter for Notion pages. Like Prettier, but for Notion.
 
+> **Why "BINER"?** In climbing, a *biner* (short for carabiner) is the essential link that connects everything on the wall — rope to harness, protection to anchor, climber to safety. BINER does the same for your Notion pages: it's the link between raw content and polished, professional structure. Part of the [Alpine toolkit](https://github.com/Percona-Lab) alongside [PACK](https://github.com/Percona-Lab/DK-PACK), [MYNAH](https://github.com/Percona-Lab/MYNAH), [IBEX](https://github.com/Percona-Lab/IBEX), and [SHERPA](https://github.com/Percona-Lab/SHERPA).
+
 ## What it does
 
-notion-beautifier is a plugin for Claude that transforms plain Notion pages into professionally structured documents. It applies a consistent design system — colored section headers, structured layouts, tables, columns — so your pages look polished without manual formatting.
+BINER is a plugin for Claude that transforms plain Notion pages into professionally structured documents. It applies a consistent design system — colored section headers, structured layouts, tables, columns — so your pages look polished without manual formatting.
 
 **Four commands:**
 
@@ -29,32 +33,32 @@ notion-beautifier is a plugin for Claude that transforms plain Notion pages into
 Open Claude and prompt:
 
 ```
-Install this plugin: https://github.com/Percona-Lab/notion-beautifier
+Install this plugin: https://github.com/Percona-Lab/BINER
 ```
 
-Claude will clone the repo, install the plugin to `~/.claude/plugins/notion-beautifier/`, and clean up. Done.
+Claude will clone the repo, install the plugin to `~/.claude/plugins/biner/`, and clean up. Done.
 
 #### Manual
 
 1. Clone or download this repo
-2. Copy the contents into `~/.claude/plugins/notion-beautifier/`
+2. Copy the contents into `~/.claude/plugins/biner/`
 3. Restart Claude (or reload plugins)
 
 ```bash
-mkdir -p ~/.claude/plugins/notion-beautifier
-git clone https://github.com/Percona-Lab/notion-beautifier.git /tmp/notion-beautifier
-cp -r /tmp/notion-beautifier/.claude-plugin /tmp/notion-beautifier/skills ~/.claude/plugins/notion-beautifier/
-rm -rf /tmp/notion-beautifier
+mkdir -p ~/.claude/plugins/biner
+git clone https://github.com/Percona-Lab/BINER.git /tmp/biner
+cp -r /tmp/biner/.claude-plugin /tmp/biner/skills ~/.claude/plugins/biner/
+rm -rf /tmp/biner
 ```
 
 ### Verify it's installed
 
-In Claude Code, run `/plugins` — you should see `notion-beautifier` in the list. In Cowork, the plugin will appear automatically when you start a new session.
+In Claude Code, run `/plugins` — you should see `biner` in the list. In Cowork, the plugin will appear automatically when you start a new session.
 
 ## Plugin Structure
 
 ```
-notion-beautifier/
+biner/
 ├── .claude-plugin/
 │   └── plugin.json          # Plugin metadata (name, version, author)
 ├── skills/
@@ -81,7 +85,7 @@ Beautify https://www.notion.so/your-workspace/Your-Page-abc123
 
 ## Personalized Styles
 
-The plugin can learn your design preferences from existing Notion pages you love — similar to how [MYNAH](https://github.com/Percona-Lab/MYNAH) learns your writing voice.
+BINER can learn your design preferences from existing Notion pages you love — similar to how [MYNAH](https://github.com/Percona-Lab/MYNAH) learns your writing voice.
 
 ```
 Learn my Notion style from these pages: [URL1] [URL2] [URL3]
@@ -93,11 +97,11 @@ Optionally name the profile:
 Learn my Notion style as "technical" from these pages: [URL1] [URL2] [URL3]
 ```
 
-Once learned, all future Create and Beautify commands automatically apply your preferred patterns, colors, and formatting choices. Profiles are stored in your persistent memory ([PACK](https://github.com/Percona-Lab/PACK) or equivalent) — not in the plugin itself. The default design system still applies if no profile exists.
+Once learned, all future Create and Beautify commands automatically apply your preferred patterns, colors, and formatting choices. Profiles are stored in your persistent memory ([PACK](https://github.com/Percona-Lab/DK-PACK) or equivalent) — not in the plugin itself. The default design system still applies if no profile exists.
 
 ## What it formats
 
-The plugin works with any type of Notion page:
+BINER works with any type of Notion page:
 
 - **Vision / Strategy docs** — Two-column pillars, synthesis sections, summary callouts
 - **Proposals** — Colored section headers, phased plans, comparison tables
@@ -107,7 +111,7 @@ The plugin works with any type of Notion page:
 
 ## Design System
 
-The plugin applies a consistent color language:
+BINER applies a consistent color language:
 
 | Color | Meaning |
 |-------|---------|
@@ -122,7 +126,7 @@ The plugin applies a consistent color language:
 ## Known Limitations
 
 - **Full width:** The Notion API doesn't support setting pages to full width — toggle it manually after creation.
-- **Toggle + code:** Notion's toggle blocks can't contain code blocks (the code gets stripped). The plugin works around this with styled headings and callouts instead.
+- **Toggle + code:** Notion's toggle blocks can't contain code blocks (the code gets stripped). BINER works around this with styled headings and callouts instead.
 - **Privacy:** Pages are created as private by default. Tell Claude where to put the page if you want it somewhere specific.
 
 ## License

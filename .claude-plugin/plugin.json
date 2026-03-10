@@ -1,8 +1,8 @@
 {
-  "name": "notion-beautifier",
-  "version": "1.1.0",
+  "name": "biner",
+  "version": "2.0.0",
   "author": "Percona Lab",
-  "description": "Professional page formatting for Notion — like Prettier, but for Notion. Applies a consistent design system with colored section headers, structured layouts, tables, and columns.",
-  "repository": "https://github.com/Percona-Lab/notion-beautifier",
+  "description": "BINER — Beautiful Intelligent Notion Enhancement & Reformatting. Professional page formatting for Notion, like Prettier but for Notion. Part of the Alpine toolkit.",
+  "repository": "https://github.com/Percona-Lab/BINER",
   "license": "MIT"
 }

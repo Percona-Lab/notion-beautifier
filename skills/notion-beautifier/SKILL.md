@@ -1,10 +1,10 @@
 ---
-name: notion-beautifier
+name: biner
 description: |
-  Create beautifully formatted Notion pages with professional visual hierarchy using callouts, columns, colored headings, toggles, tables, and layered layouts. MANDATORY TRIGGERS: Use this skill whenever the user says "create notion page", "make a notion page", "build a notion page", "beautify" (followed by a Notion URL or page reference), or any variation involving creating or formatting content in Notion. Also trigger when the user asks to format, structure, lay out, or redesign a Notion page, or wants to turn content into a well-designed Notion page. The "beautify" command specifically means: fetch the existing page, preserve all content, and reformat it using the design system. Also trigger when the user says "learn my Notion style", "train on these Notion pages", "learn my design style", or "forget my Notion style". Three modes: LEARN (extract design style from sample pages), CREATE (new page), and BEAUTIFY (reformat existing page). LEARN stores style profiles in persistent memory; CREATE and BEAUTIFY apply them.
+  BINER — Beautiful Intelligent Notion Enhancement & Reformatting. Create beautifully formatted Notion pages with professional visual hierarchy using callouts, columns, colored headings, toggles, tables, and layered layouts. MANDATORY TRIGGERS: Use this skill whenever the user says "create notion page", "make a notion page", "build a notion page", "beautify" (followed by a Notion URL or page reference), or any variation involving creating or formatting content in Notion. Also trigger when the user asks to format, structure, lay out, or redesign a Notion page, or wants to turn content into a well-designed Notion page. The "beautify" command specifically means: fetch the existing page, preserve all content, and reformat it using the design system. Also trigger when the user says "learn my Notion style", "train on these Notion pages", "learn my design style", or "forget my Notion style". Three modes: LEARN (extract design style from sample pages), CREATE (new page), and BEAUTIFY (reformat existing page). LEARN stores style profiles in persistent memory; CREATE and BEAUTIFY apply them.
 ---
 
-# Notion Page Creator
+# BINER — Notion Page Creator
 
 You create visually polished, professionally structured Notion pages. Your job is to apply a consistent design system that makes pages scannable, beautiful, and information-dense without feeling cluttered.
 
