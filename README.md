@@ -22,26 +22,28 @@ notion-beautifier is a skill for Claude that transforms plain Notion pages into 
 
 ### How to install
 
-**Step 1:** Download the `SKILL.md` file from this repo. You can either:
-- Click on `SKILL.md` above, then click the download button (↓), or
-- Click the green **Code** button → **Download ZIP**, then unzip it
+#### One-liner (Claude Code)
 
-**Step 2:** Create the skills folder if it doesn't exist. Open your terminal and run:
+Open Claude Code and prompt:
+
+```
+Install this skill: https://github.com/Percona-Lab/notion-beautifier
+```
+
+Claude will clone the repo, copy the skill files to `~/.claude/skills/notion-beautifier/`, and clean up. Done.
+
+#### Manual
+
+1. Clone or download this repo
+2. Copy `SKILL.md` into `~/.claude/skills/notion-beautifier/`
+3. Restart Claude (or reload skills)
+
 ```bash
 mkdir -p ~/.claude/skills/notion-beautifier
+git clone https://github.com/Percona-Lab/notion-beautifier.git /tmp/notion-beautifier
+cp /tmp/notion-beautifier/SKILL.md ~/.claude/skills/notion-beautifier/
+rm -rf /tmp/notion-beautifier
 ```
-
-**Step 3:** Move the `SKILL.md` file into that folder:
-```bash
-mv ~/Downloads/SKILL.md ~/.claude/skills/notion-beautifier/
-```
-
-That's it! The skill will be available in your next Claude session.
-
-> **Tip:** If you downloaded the ZIP, the file is inside a `notion-beautifier-main` folder. Adjust the path accordingly:
-> ```bash
-> mv ~/Downloads/notion-beautifier-main/SKILL.md ~/.claude/skills/notion-beautifier/
-> ```
 
 ### Verify it's installed
 
