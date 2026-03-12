@@ -38,6 +38,14 @@ Install this plugin: https://github.com/Percona-Lab/BINER
 
 Claude will clone the repo, install the plugin to `~/.claude/plugins/biner/`, and clean up. Done.
 
+#### ZIP upload (Cowork)
+
+Download `biner-plugin.zip` from the
+[latest release](https://github.com/Percona-Lab/BINER/releases/latest) and
+upload it in Cowork under **Settings > Plugins > Upload**. This also works for
+org-level installation: a team admin can upload the ZIP to make BINER available
+to all members on Team or Enterprise plans.
+
 #### Manual
 
 1. Clone or download this repo
